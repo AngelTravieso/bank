@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../utilities/themeStyles.dart';
+import '../utilities/theme_styles.dart';
 import '../widgets/transaction_card.dart';
 
 class RecentTransactions extends StatefulWidget {
+  const RecentTransactions({Key? key}) : super(key: key);
+
   @override
   _RecentTransactionsState createState() => _RecentTransactionsState();
 }
@@ -24,8 +26,9 @@ class _RecentTransactionsState extends State<RecentTransactions> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Recent Transactions', style: ThemeStyles.primaryTitle),
-                Text('See All', style: ThemeStyles.seeAll),
+                Text('Transacciones Recientes',
+                    style: ThemeStyles.primaryTitle),
+                Text('Ver Todo', style: ThemeStyles.seeAll),
               ],
             ),
           ),
@@ -34,26 +37,26 @@ class _RecentTransactionsState extends State<RecentTransactions> {
             child: ListView(
               shrinkWrap: true,
               scrollDirection: Axis.vertical,
-              children: [
+              children: const <Widget>[
                 TransactionCard(
                   color: Colors.black,
                   letter: 'F',
-                  title: 'Fintory GmbH',
-                  subTitle: 'Finance Landing Page',
+                  title: 'Johan Canzanese',
+                  subTitle: 'LibrePago',
                   price: '- 5.720,30 €',
                 ),
                 TransactionCard(
                   color: Color(0xfffe695d),
                   letter: 'D',
                   title: 'Domink Schmidit',
-                  subTitle: 'Mykonos Hotel Booking',
+                  subTitle: 'UbiiPagos',
                   price: '- 620,30 €',
                 ),
                 TransactionCard(
                   color: Color(0xff103289),
                   letter: 'E',
                   title: 'Evolt.io',
-                  subTitle: 'Evolt UI Kit',
+                  subTitle: 'VePagos',
                   price: '- 59,99 €',
                 ),
                 TransactionCard(

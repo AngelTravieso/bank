@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 
-import '../utilities/themeColors.dart';
-import '../utilities/themeStyles.dart';
+import '../utilities/theme_color.dart';
+import '../utilities/theme_styles.dart';
 import '../widgets/credit_card.dart';
 
 class CardsList extends StatefulWidget {
+  const CardsList({Key? key}) : super(key: key);
+
   @override
   _CardsListState createState() => _CardsListState();
 }
 
 class _CardsListState extends State<CardsList> {
   List cardList = [
-    CreditCard(),
-    CreditCard(),
-    CreditCard(),
-    CreditCard(),
-    CreditCard(),
+    const CreditCard(),
+    const CreditCard(),
+    const CreditCard(),
+    const CreditCard(),
+    const CreditCard(),
   ];
 
   int _currentCard = 0;
@@ -23,7 +25,6 @@ class _CardsListState extends State<CardsList> {
   final PageController _pageController = PageController(initialPage: 0);
   @override
   void dispose() {
-    // TODO: implement dispose
     _pageController.dispose();
     super.dispose();
   }
@@ -36,52 +37,50 @@ class _CardsListState extends State<CardsList> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(
-                top: 32.0, left: 15.0, right: 15.0, bottom: 16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Your Cards', style: ThemeStyles.primaryTitle),
-                Text('See All', style: ThemeStyles.seeAll),
-              ],
-            ),
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(
+              top: 32.0, left: 15.0, right: 15.0, bottom: 16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Tus Tarjetas', style: ThemeStyles.primaryTitle),
+              Text('Ver Todo', style: ThemeStyles.seeAll),
+            ],
           ),
-          Container(
-            height: 246.0,
-            child: PageView.builder(
-              itemCount: cardList.length,
-              scrollDirection: Axis.horizontal,
-              controller: _pageController,
-              onPageChanged: _onPageChanged,
-              itemBuilder: (context, index) => CreditCard(),
-            ),
+        ),
+        SizedBox(
+          height: 246.0,
+          child: PageView.builder(
+            itemCount: cardList.length,
+            scrollDirection: Axis.horizontal,
+            controller: _pageController,
+            onPageChanged: _onPageChanged,
+            itemBuilder: (context, index) => const CreditCard(),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                for (int i = 0; i < cardList.length; i++)
-                  if (_currentCard == i)
-                    DotIndicator(true)
-                  else
-                    DotIndicator(false)
-              ],
-            ),
-          )
-        ],
-      ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              for (int i = 0; i < cardList.length; i++)
+                if (_currentCard == i)
+                  const DotIndicator(isActive: true)
+                else
+                  const DotIndicator(isActive: false)
+            ],
+          ),
+        )
+      ],
     );
   }
 }
 
 class DotIndicator extends StatefulWidget {
   final bool isActive;
-  DotIndicator(this.isActive);
+  const DotIndicator({Key? key, required this.isActive}) : super(key: key);
   @override
   _DotIndicatorState createState() => _DotIndicatorState();
 }

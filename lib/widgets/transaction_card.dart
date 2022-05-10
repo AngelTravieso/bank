@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../pages/pages.dart';
-import '../utilities/themeStyles.dart';
+import '../utilities/theme_styles.dart';
 
 class TransactionCard extends StatefulWidget {
   final String title;
@@ -9,13 +9,15 @@ class TransactionCard extends StatefulWidget {
   final String price;
   final String letter;
   final Color color;
-  TransactionCard({
+  const TransactionCard({
+    Key? key,
     required this.color,
     required this.letter,
     required this.price,
     required this.subTitle,
     required this.title,
-  });
+  }) : super(key: key);
+
   @override
   _TransactionCardState createState() => _TransactionCardState();
 }
@@ -40,7 +42,7 @@ class _TransactionCardState extends State<TransactionCard> {
             ),
           );
         },
-        child: Container(
+        child: SizedBox(
           height: 62.0,
           width: 343.0,
           child: Column(
@@ -60,7 +62,7 @@ class _TransactionCardState extends State<TransactionCard> {
                         child: Center(
                           child: Text(
                             widget.letter,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 30.0,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
@@ -68,7 +70,7 @@ class _TransactionCardState extends State<TransactionCard> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 16.0),
+                      const SizedBox(width: 16.0),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,9 +85,10 @@ class _TransactionCardState extends State<TransactionCard> {
                   ),
                   Row(
                     children: [
-                      Text(widget.price, style: TextStyle(color: Colors.red)),
-                      SizedBox(width: 4.0),
-                      Icon(Icons.keyboard_arrow_right),
+                      Text(widget.price,
+                          style: const TextStyle(color: Colors.red)),
+                      const SizedBox(width: 4.0),
+                      const Icon(Icons.keyboard_arrow_right),
                     ],
                   )
                 ],

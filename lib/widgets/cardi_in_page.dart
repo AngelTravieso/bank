@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utilities/themeStyles.dart';
+import '../utilities/theme_styles.dart';
 
 class CardInPage extends StatefulWidget {
   final String title;
@@ -8,13 +8,14 @@ class CardInPage extends StatefulWidget {
   final String price;
   final String letter;
   final Color color;
-  CardInPage({
+  const CardInPage({
+    Key? key,
     required this.color,
     required this.letter,
     required this.price,
     required this.subTitle,
     required this.title,
-  });
+  }) : super(key: key);
   @override
   _CardInPageState createState() => _CardInPageState();
 }
@@ -24,7 +25,7 @@ class _CardInPageState extends State<CardInPage> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-      child: Container(
+      child: SizedBox(
         height: 57.0,
         child: Column(
           children: [
@@ -43,7 +44,7 @@ class _CardInPageState extends State<CardInPage> {
                       child: Center(
                         child: Text(
                           widget.letter,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 30.0,
                             fontWeight: FontWeight.w700,
                             color: Colors.white,
@@ -51,7 +52,7 @@ class _CardInPageState extends State<CardInPage> {
                         ),
                       ),
                     ),
-                    SizedBox(width: 16.0),
+                    const SizedBox(width: 16.0),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,9 +67,10 @@ class _CardInPageState extends State<CardInPage> {
                 ),
                 Row(
                   children: [
-                    Text(widget.price, style: TextStyle(color: Colors.red)),
-                    SizedBox(width: 4.0),
-                    Icon(Icons.keyboard_arrow_right),
+                    Text(widget.price,
+                        style: const TextStyle(color: Colors.red)),
+                    const SizedBox(width: 4.0),
+                    const Icon(Icons.keyboard_arrow_right),
                   ],
                 )
               ],

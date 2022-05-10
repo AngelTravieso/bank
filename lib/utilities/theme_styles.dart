@@ -1,4 +1,4 @@
-import 'package:bank/utilities/themeColors.dart';
+import 'package:bank/utilities/theme_color.dart';
 import 'package:flutter/material.dart';
 
 class ThemeStyles {
@@ -11,12 +11,12 @@ class ThemeStyles {
     fontSize: 17.0,
     color: ThemeColors.black,
   );
-  static TextStyle cardDetails = TextStyle(
+  static TextStyle cardDetails = const TextStyle(
     fontSize: 17.0,
     color: Color(0xff66646d),
     fontWeight: FontWeight.w600,
   );
-  static TextStyle cardMoney = TextStyle(
+  static TextStyle cardMoney = const TextStyle(
     color: Colors.white,
     fontSize: 22.0,
     fontWeight: FontWeight.w700,
@@ -30,7 +30,7 @@ class ThemeStyles {
     fontSize: 16.0,
     color: ThemeColors.black,
   );
-  static TextStyle otherDetailsSecondary = TextStyle(
+  static TextStyle otherDetailsSecondary = const TextStyle(
     fontSize: 12.0,
     color: Colors.grey,
   );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class OtherDetailsDivider extends StatefulWidget {
+  const OtherDetailsDivider({Key? key}) : super(key: key);
+
   @override
   _OtherDetailsDividerState createState() => _OtherDetailsDividerState();
 }

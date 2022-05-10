@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AddNote extends StatefulWidget {
+  const AddNote({Key? key}) : super(key: key);
+
   @override
   _AddNoteState createState() => _AddNoteState();
 }
@@ -15,9 +17,9 @@ class _AddNoteState extends State<AddNote> {
       child: Container(
         height: 44.0,
         width: 345.0,
-        child: Center(
+        child: const Center(
           child: Text(
-            'Add a Note',
+            'Agregar una nota',
             style: TextStyle(
               fontSize: 16.0,
               fontStyle: FontStyle.italic,
@@ -26,7 +28,7 @@ class _AddNoteState extends State<AddNote> {
           ),
         ),
         decoration: BoxDecoration(
-          color: Color(0xffe8e8e9),
+          color: const Color(0xffe8e8e9),
           borderRadius: BorderRadius.circular(8.0),
         ),
       ),

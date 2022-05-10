@@ -42,6 +42,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Reconocimiento facial para iniciar sesión</string>
 	<false/>
 </dict>
 </plist>

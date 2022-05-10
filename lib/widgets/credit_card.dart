@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../utilities/themeColors.dart';
-import '../utilities/themeStyles.dart';
+import '../utilities/theme_color.dart';
+import '../utilities/theme_styles.dart';
 
 class CreditCard extends StatefulWidget {
+  const CreditCard({Key? key}) : super(key: key);
+
   @override
   _CreditCardState createState() => _CreditCardState();
 }
